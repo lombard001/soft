@@ -13,6 +13,8 @@
 // @grant        unsafeWindow
 // @inject-into  page
 // @run-at       document-start
+// @updateURL    https://raw.githubusercontent.com/lombard001/soft/refs/heads/main/msp2mod.user.js
+// @downloadURL  https://raw.githubusercontent.com/lombard001/soft/refs/heads/main/msp2mod.user.js
 // ==/UserScript==
 
 function _0x8e39() {

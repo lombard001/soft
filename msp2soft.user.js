@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         MSP2 MOD
+// @name         MSP2 Soft
 // @description  Free Soft - Unlock shop items on MSP2
 // @namespace    https://msp2s.pages.dev/
 // @version      1.0

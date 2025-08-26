@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        New script moviestarplanet2.com
+// @name        MSP2 Troll
 // @namespace   Violentmonkey Scripts
 // @match       https://moviestarplanet2.com/*
 // @grant       none

@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://moviestarplanet2.com/*
 // @grant       none
-// @version     1.0
+// @version     3.6.4
 // @author      -
 // @description 03.07.2025 14:14:18
 // ==/UserScript==

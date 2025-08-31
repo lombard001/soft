@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name        Troll Script
-// @namespace   MSP2 Troll
+// @name        MSP2 Troll
+// @namespace   MSP2 Troll Scripts
 // @match       https://moviestarplanet2.com/*
 // @grant       none
 // @version     3.9.0

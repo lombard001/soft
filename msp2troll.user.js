@@ -3,7 +3,7 @@
 // @namespace   MSP2 Troll Scripts
 // @match       https://moviestarplanet2.com/*
 // @grant       none
-// @version     3.9.0
+// @version     3.9.1
 // @updateURL   https://raw.githubusercontent.com/lombard001/soft/refs/heads/main/troll.js
 // @downloadURL https://raw.githubusercontent.com/lombard001/soft/refs/heads/main/troll.js
 // ==/UserScript==

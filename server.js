@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 // GitHub raw URLs
 const scripts = {
-    troll: 'https://raw.githubusercontent.com/lombard001/soft/main/msp2troll.js',
+    troll: 'https://raw.githubusercontent.com/lombard001/soft/main/msp2troll.user.js',
     mood: 'https://raw.githubusercontent.com/lombard001/soft/main/MSP2.mood.user.js',
     soft: 'https://raw.githubusercontent.com/lombard001/soft/main/msp2soft.user.js'
 };

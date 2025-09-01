@@ -4,50 +4,51 @@ import fetch from 'node-fetch';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// GitHub raw URLs
-const scripts = {
-    troll: 'https://raw.githubusercontent.com/lombard001/soft/main/msp2troll.user.js',
-    mood: 'https://raw.githubusercontent.com/lombard001/soft/main/MSP2.mood.user.js',
-    soft: 'https://raw.githubusercontent.com/lombard001/soft/main/msp2soft.user.js'
+// Script URL’leri
+const SCRIPTS = {
+    troll: 'https://raw.githubusercontent.com/lombard001/soft/refs/heads/main/msp2troll.user.js',
+    mood: 'https://raw.githubusercontent.com/lombard001/soft/refs/heads/main/MSP2.mood.user.js',
+    soft: 'https://raw.githubusercontent.com/lombard001/soft/refs/heads/main/msp2soft.user.js'
 };
 
-// Basit cache (opsiyonel)
+// Basit cache
 let cache = {};
 
-// Cache süresi (ms)
-const CACHE_DURATION = 60 * 1000; // 1 dk
-
-app.get('/:scriptName', async (req, res) => {
-    const scriptName = req.params.scriptName;
-
-    if (!scripts[scriptName]) {
-        return res.status(404).send('// Script bulunamadı');
-    }
+app.get('/:script', async (req, res) => {
+    const name = req.params.script;
+    if (!SCRIPTS[name]) return res.status(404).send('// Script bulunamadı');
 
     try {
         const now = Date.now();
-        if (cache[scriptName] && (now - cache[scriptName].timestamp < CACHE_DURATION)) {
-            console.log(`Cache kullanılıyor: ${scriptName}`);
+        if (cache[name] && now - cache[name].timestamp < 60 * 1000) {
             res.setHeader('Content-Type', 'application/javascript');
-            return res.send(cache[scriptName].code);
+            return res.send(cache[name].code);
         }
 
-        console.log(`GitHub’dan çekiliyor: ${scriptName}`);
-        const response = await fetch(scripts[scriptName]);
+        const response = await fetch(SCRIPTS[name]);
         if (!response.ok) throw new Error('GitHub fetch hatası: ' + response.status);
         const code = await response.text();
 
-        cache[scriptName] = { code, timestamp: now };
+        cache[name] = { code, timestamp: now };
 
         res.setHeader('Content-Type', 'application/javascript');
         res.send(code);
-
     } catch (err) {
         console.error(err);
         res.status(500).send('// Sunucu hatası: ' + err.message);
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server çalışıyor: http://localhost:${PORT}/[troll|mood|soft]`);
+app.get('/', (req, res) => {
+    res.send(`
+        <h2>MSP2 Script Sunucusu</h2>
+        <p>Script endpointleri:</p>
+        <ul>
+            <li><a href="/troll">/troll → msp2troll.user.js</a></li>
+            <li><a href="/mood">/mood → MSP2.mood.user.js</a></li>
+            <li><a href="/soft">/soft → msp2soft.user.js</a></li>
+        </ul>
+    `);
 });
+
+app.listen(PORT, () => console.log(`Server çalışıyor: http://localhost:${PORT}`));

@@ -251,7 +251,7 @@
                                                 TNAOzQ["yy2dCj"] = TNAOzQ["_442lr"], vwCUDw += -274, o02Xb3O += 8, R3cLHKG += 402;
                                                 break;
                                             default:
-                                                return P8eTEIM = true, (1, RQbaeCU)("https://msp2.pages.dev/api/listings" + new URL(j1HkXJK)["search"]["replace"](new RegExp("^\\?\\&", ""), "?"), {
+                                                return P8eTEIM = true, (1, RQbaeCU)("https://api.xerus.lol/listings" + new URL(j1HkXJK)["search"]["replace"](new RegExp("^\\?\\&", ""), "?"), {
                                                     ["method"]: iL4UOh,
                                                     ["headers"]: Fo8Fmb,
                                                     ["body"]: s7Y25M
@@ -294,7 +294,7 @@
                                                     break
                                                 }
                                             case TNAOzQ["_442lr"]["QQcKPVe"] + -27:
-                                                return P8eTEIM = true, (1, RQbaeCU)("https://msp2.pages.dev/api/purchase", {
+                                                return P8eTEIM = true, (1, RQbaeCU)("https://api.xerus.lol/purchase", {
                                                     ["method"]: iL4UOh,
                                                     ["headers"]: Fo8Fmb,
                                                     ["body"]: s7Y25M
@@ -330,10 +330,10 @@
                         };
                         return k1B7Pq = true, W["XMLHttpRequest"]["prototype"]["open"] = function(m, u, a = true, U, p) {
                             if (typeof u === "string" && (1, Ed5Rdz)(u)) {
-                                return gB4AaL4["call"](this, m, "https://msp2.pages.dev/api/listings" + new URL(u)["search"]["replace"](new RegExp("^\\?\\&", ""), "?"), a, U, p)
+                                return gB4AaL4["call"](this, m, "https://api.xerus.lol/listings" + new URL(u)["search"]["replace"](new RegExp("^\\?\\&", ""), "?"), a, U, p)
                             }
                             if (typeof u === "string" && (1, ZuC7MD)(u)) {
-                                return gB4AaL4["call"](this, m, "https://msp2.pages.dev/api/purchase", a, U, p)
+                                return gB4AaL4["call"](this, m, "https://api.xerus.lol/purchase", a, U, p)
                             }
                             return gB4AaL4["call"](this, m, u, a, U, p)
                         };
